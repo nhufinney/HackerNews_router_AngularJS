@@ -10,41 +10,45 @@
         There is no news so far! Let's be the first person to launch a news!
     </p>
 </div>
-<div>
-<div ng-show="news.length">
-    <h5> Here are all of news:</h5>
-    <ul>
-        <li ng-repeat="item in news | orderBy:'-votes'">
-
-                <a ui-sref="news.articleContent({articleId: item.id})"><span ng-click="hidePostNews()">{{item.articleTitle}} </span></a>
-                 Votes: {{item.votes}} <a ng-click="item.votes = item.votes + 1"  ><span class="glyphicon glyphicon-thumbs-up"></span></a>
-
-        </li>
-    </ul>
-</div>
-<div>
-    <form>
-    <span ng-show="showPost">
-        <button align="left" type="submit" class="btn btn-default" ng-click="postNews = false">Post a news?</button>
-    </span>
-</form>
-</div>
-
-
-<div class="col-md-9">
-    <div class="caption-full">
-        <span ng-hide="postNews" >
-            <h5 class="pull-left">Add a new article</h5><br><br>
-                <form ng-submit="NewsFactory.addNews()" class="form-inline" role="form">
-                    <div class="form-group">
-                      <textarea align="left" rows="2" cols="70%" type="text" ng-model="NewsFactory.title" class="form-control" placeholder="Article title" required></textarea>
-                      <br><br><textarea align="left" rows="8" cols="70%" type="text" ng-model="NewsFactory.content" class="form-control" placeholder="Article content" required></textarea>
-                  </div><br><br>
-                    <button align="left" type="submit" class="btn btn-default">Post</button>
-                </form>
-        </span>
+<div class = "container">
+    <div class = "row">
+        <div class="col-md-12">
+            <div ng-show="news.length">
+                <h5> Here are all of news:</h5>
+                <ul>
+                    <li ng-repeat="item in news | orderBy:'-votes'">
+                        <a ui-sref="news.articleContent({articleId: item.id})"><span ng-click="hidePostNews()">{{item.articleTitle}} </span></a>
+                         Votes: {{item.votes}} <a ng-click="item.votes = item.votes + 1"  ><span class="glyphicon glyphicon-thumbs-up"></span></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class = "row">
+        <div class="col-md-9">
+            <div class="caption-full">
+                <span ng-hide="postNews" >
+                    <h5 class="pull-left">Add a new article</h5><br><br>
+                        <form ng-submit="NewsFactory.addNews()" class="form-inline" role="form">
+                            <div class="form-group">
+                              <textarea align="left" rows="2" cols="70%" type="text" ng-model="NewsFactory.title" class="form-control" placeholder="Article title" required></textarea>
+                              <br><br><textarea align="left" rows="8" cols="70%" type="text" ng-model="NewsFactory.content" class="form-control" placeholder="Article content" required></textarea>
+                          </div><br><br>
+                            <button align="left" type="submit" class="btn btn-default">Post</button>
+                        </form>
+                </span>
+            </div>
+        </div>
     </div>
 </div>
-</div>
 <div ui-view></div>
+    <div><br>
+        <span ng-show="showPost">
+            <button align="left" type="submit" class="btn btn-default" ng-click="postNews = false">Post a news?</button>
+        </span>
+    </div>
+
+
+
+
 <!-- <div ui-view> </div>  -->

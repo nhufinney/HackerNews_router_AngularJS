@@ -6,6 +6,25 @@
 
 body {
     padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+
+}
+
+body::after {
+      content: "";
+      opacity: 0.3;
+      top: 20px;
+      left: 20px;
+      bottom: 20px;
+      right: 20px;
+      position: fixed;
+      z-index: -1;
+      background: url(news.jpg)no-repeat center center fixed;
+
+      -webkit-filter: grayscale(1);
+      -webkit-background-size: 50%;
+      -moz-background-size: 50%;
+      -o-background-size: 50%;
+      background-size: 50%;
 }
 
 .thumbnail img {
