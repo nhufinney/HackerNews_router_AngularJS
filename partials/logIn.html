@@ -1,0 +1,21 @@
+<div>
+    <br><br><br>
+</div>
+<section class="login">
+    <form name="myForm" novalidate ng-submit="checkin()" action="#/news">
+        <p>Login to access the Hacker's News!</p>
+        <input type="email" name="email" placeholder="Email" autofocus
+        ng-model="new_email" ng-required="true">
+        <p class="error validationerror" ng-show="myForm.email.$invalid && myForm.email.$touched">
+            Must be a valid email</p>
+
+        <input type="password" name="password" placeholder="Password"
+        ng-model="new_password" ng-required="true">
+        <p class="error validationerror" ng-show="myForm.password.$invalid && myForm.password.$touched">
+            password is required</p>
+
+        <button type="submit" class="btn">Login</button>
+        <p> or <a href="#/register">register</a> </p>
+
+    </form>
+</section>

@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="col-md-9">
+        <div class="form-group">
+        <h4> {{ news.articleTitle }} </h4>
+
+            <p> {{news.articleContent}}</p>
+        </div>
+    </div>
+</div>
+
+
+<div ng-show="news.comments.length">
+    <h4>Comments for {{news.articleTitle}}</h4>
+    <ul>
+        <li ng-repeat="item in news.comments">
+        {{item.content}}
+        </li>
+    </ul>
+</div>
+
+<div>
+    <h5>Add comment for {{ news.articleTitle }}?</h5>
+        <form ng-submit="addComment()" class="form-inline" role="form">
+            <div class="form-group">
+              <textarea align="left" rows="1" cols="70%" ng-model="commentContent" class="form-control" placeholder="Leave your comment here!" required></textarea>
+          </div><br>
+        <button type="submit" class="btn btn-default">Comment!</button>
+    </form>
+</div>
+
+<div ui-view></div>
